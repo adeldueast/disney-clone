@@ -66,7 +66,7 @@ function Header() {
             width={56}
             height={56}
             objectFit="cover"
-            src="https://lh3.googleusercontent.com/a-/AOh14GhJ7zI_p-18oz_CY0hyLvF5RjesLzS1dlf0DJ3qIA=s96-c"
+            src={session.user.image}
             className="rounded-full"
           />
         </div>

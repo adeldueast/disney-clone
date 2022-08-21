@@ -15,12 +15,12 @@ function Movie({ result }) {
   const [showPlayer, setShowPlayer] = useState(false);
 
   useEffect(() => {
+    //if no session is provided we redirect to '/' even tho we can do that during the server side render process 
     if (!session) {
       router.push("/");
     }
   }, []);
 
-  console.log(result);
   const index = result.videos.results.findIndex(
     (element) => element.type === "Trailer"
   );
@@ -131,13 +131,18 @@ function Movie({ result }) {
 export default Movie;
 
 export async function getServerSideProps(context) {
+  //get the current user's session 
   const session = await getSession(context);
+  // get the movie id from params
   const { id } = context.query;
 
+
+  //fetch the movie
   const request = await fetch(
     `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.API_KEY}&language=en-US&append_to_response=videos`
   ).then((response) => response.json());
 
+  //return session and movie
   return {
     props: {
       session,

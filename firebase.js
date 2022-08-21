@@ -13,7 +13,7 @@ const firebaseConfig = {
   projectId: "disney-clone-a2062",
   storageBucket: "disney-clone-a2062.appspot.com",
   messagingSenderId: "885494222897",
-  appId: "1:885494222897:web:57c6a016116d5121298510",
+  appId: "1:885494222897:web:57c6a016116d5121298510"
 };
 
 // Initialize Firebase if not initialized yet
