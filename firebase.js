@@ -8,12 +8,12 @@ import firebase from "firebase";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBipoeslxso27hPBGMzK5B7-x8Vtdb6GqI",
-  authDomain: "disney-clone-a2062.firebaseapp.com",
-  projectId: "disney-clone-a2062",
-  storageBucket: "disney-clone-a2062.appspot.com",
-  messagingSenderId: "885494222897",
-  appId: "1:885494222897:web:57c6a016116d5121298510"
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId:process.env.PROJECT_ID,
+  storageBucket:process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGIN_SENDER_ID,
+  appId: process.env.APP_ID
 };
 
 // Initialize Firebase if not initialized yet
