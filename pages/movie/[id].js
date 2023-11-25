@@ -15,7 +15,7 @@ function Movie({ result }) {
   const [showPlayer, setShowPlayer] = useState(false);
 
   useEffect(() => {
-    //if no session is provided we redirect to '/' even tho we can do that during the server side render process 
+    //if no session is provided we redirect to '/' even tho we can do that during the server side render process
     if (!session) {
       router.push("/");
     }
@@ -131,11 +131,10 @@ function Movie({ result }) {
 export default Movie;
 
 export async function getServerSideProps(context) {
-  //get the current user's session 
+  //get the current user's session
   const session = await getSession(context);
   // get the movie id from params
   const { id } = context.query;
-
 
   //fetch the movie
   const request = await fetch(
